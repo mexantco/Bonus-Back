@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "617626373025",
+    "project_id": "bonusbank2-5d3de",
+    "storage_bucket": "bonusbank2-5d3de.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:617626373025:android:2cb18a28bf13b13f6619e0",
+        "android_client_info": {
+          "package_name": "com.mexantco.bb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "617626373025-aebc6kvvi65vh30d4s3eo7id03rqkjkl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mexantco.bb",
+            "certificate_hash": "c8a9f207ac61e4b259a719bfa9844b674334e2d7"
+          }
+        },
+        {
+          "client_id": "617626373025-6j6vc8uoufrrmlbede4qm39d67rc51ie.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArQZ7rKVRAVga64_QrMKK-zPbE1ifBnsQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "617626373025-00unei1g1tpe4c3b7lo9mi1noqkicrhj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

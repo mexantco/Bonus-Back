@@ -1,0 +1,48 @@
+{  
+  
+  "expo": {
+    "name": "b2b",
+    "slug": "b2b",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#878787"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "permissions": [
+        "REQUEST_INSTALL_PACKAGES"
+      ],      
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#878787"
+      },
+      "googleServicesFile": "./google-services.json",
+      "package": "com.mexantco.bb"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-build-properties", "@react-native-google-signin/google-signin"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "7546fd6d-4af6-4e6e-af73-58b6e5577778"
+      }
+    }
+  }
+  
+}
