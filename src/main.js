@@ -118,6 +118,7 @@ const Main =  ({navigation}) => {
 
   const [strike,setStrike]= useState(false);
   const [users, setUsers]= useState([]);
+  const [mypromo, setMypromo]= useState(null);
   const [coupon, setCoupon]= useState(null);
   const [used, setUsed]= useState(false);
   const [notification, setNotification] = useState(false);
@@ -177,7 +178,9 @@ async function registerForPushNotificationsAsync() {
       if(strike>=5){setStrike(true);}
       
       const coupon = docSnap.data().coupon;
+      const mypromo = docSnap.data().promo;
       const used2 = docSnap.data().used;
+      setMypromo(mypromo);
       setCoupon(coupon);
       setUsed(used2);
       setDis(false);
@@ -441,7 +444,7 @@ async function registerForPushNotificationsAsync() {
         //offset={[8,15]}
         >
           <LinearGradient colors={grinfo} style={{borderRadius:15}}>  
-        <TouchableOpacity  disabled={dis} onPressOut={()=>{setInfo(['#c5c8c8','#bbc9c4', '#9ecdc4'])}} onPressIn={()=>{setInfo(['#9ecdc4','#bbc9c4','#c5c8c8' ])}} onPress={()=>{navigation.navigate("info")}} style={{width:'100%', textAlign:'center'}}>
+        <TouchableOpacity  disabled={dis} onPressOut={()=>{setInfo(['#c5c8c8','#bbc9c4', '#9ecdc4'])}} onPressIn={()=>{setInfo(['#9ecdc4','#bbc9c4','#c5c8c8' ])}} onPress={()=>{navigation.navigate("info", {mypromo: mypromo})}} style={{width:'100%', textAlign:'center'}}>
              <Text style={{fontSize:20, width:200,color:'white',textAlign:'center', textAlignVertical:'center', height:'100%'}} >как это работает?</Text>
         </TouchableOpacity>
         </LinearGradient>

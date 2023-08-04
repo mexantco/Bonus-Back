@@ -1,4 +1,4 @@
-import {Modal, View, Text, TouchableOpacity, Alert, Linking, StatusBar, ScrollView } from 'react-native'
+import {Modal, View, Text, TouchableOpacity, Alert, Linking, StatusBar, ScrollView} from 'react-native'
 import React, {useState, useEffect, useRef} from 'react'
 import * as Notifications from 'expo-notifications';
 import * as Device from 'expo-device';
@@ -9,6 +9,7 @@ import { Shadow } from 'react-native-shadow-2';
 import {LinearGradient} from 'expo-linear-gradient';
 import { AntDesign } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons'; 
+import Clipboard from '@react-native-clipboard/clipboard';
 
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
@@ -19,9 +20,12 @@ Notifications.setNotificationHandler({
 });
 
 
-const Info = ({navigation}) => {
+const Info = ({navigation, route}) => {
+  const mypromo = route.params.mypromo; 
+  const [Copied,setCopied] = useState("Скопировать");
   const [mod1,setMod1] = useState(false);
   const [mod2,setMod2] = useState(false);
+  const [mod3,setMod3] = useState(false);
 
 // const checkbusy = async ()=>{
     
@@ -54,6 +58,25 @@ const Info = ({navigation}) => {
          После этого вам придет нужный код для подтверждения.{"\n"}
          <Text style={{textAlign:'center', fontSize:22}}>Где взять талоны?</Text> {"\n"}
          {"\u00A0\u00A0\u00A0\u00A0\u00A0"}Талон дается за успешную продажу бонусов. Вы можете выставить свои бонусы на продажу, после продажи вам начисляется 1 талон, или вы можете оплатить 200р и получить 1 талон.  </Text>
+         </ScrollView>
+        </View>
+        </Modal>
+        <Modal 
+      visible={mod3}
+      animationType="fade"
+      transparent={true}
+      >
+        
+        <View  style={{ padding:15,alignItems:'center', backgroundColor:'#cecece', height:'100%', justifyContent:'center'}}><Text  style={{fontSize:25}}></Text>
+        <AntDesign style={{marginBottom:30}} name="closecircle" size={40} color="#bbb" onPress={()=>{setMod3(false)}} />
+        <ScrollView>
+        <Text style={{fontSize:17, textAlign:'left'}}><Text style={{textAlign:'center', fontSize:22}}> Расскажите друзьям о нашем приложении. {"\n"} За каждого человека, который использует ваш промокод при покупке бонусов, мы начислим вам 1 талон.{"\n"}</Text>
+         </Text>
+         <Text style={{textAlign:'center', fontSize:20, margin:20}}>Ваш промокод <Text style={{fontSize:29}}>{mypromo}</Text></Text> 
+         <TouchableOpacity
+         onPress={()=>{Clipboard.setString(mypromo); setCopied("Скопировано")}}
+         style={{width:'60%', backgroundColor:"#bbb", alignSelf:"center", borderRadius:15,height:75, justifyContent:'center'}}
+         ><Text style={{textAlign:"center", fontSize:20, color:'white'}}>{Copied}</Text></TouchableOpacity>
          </ScrollView>
         </View>
         </Modal>
@@ -112,11 +135,11 @@ const Info = ({navigation}) => {
         //#a3a3a3
         startColor='#a3a3a3'
         finalColor='#cecece'
-        style={{borderRadius:20, borderLeftWidth:1, borderTopWidth:2, width:200,borderColor:'white',height:100}}
-        containerStyle={{marginTop:40,  borderRadius:15, backgroundColor:"#d6dcde",  marginBottom:60,width:200, alignSelf:'center'}}
+        style={{borderRadius:20, borderLeftWidth:1, borderTopWidth:2, width:200,borderColor:'white',height:75}}
+        containerStyle={{marginTop:30,  borderRadius:15, backgroundColor:"#d6dcde",  marginBottom:20,width:200, alignSelf:'center'}}
         >
        
-        <LinearGradient colors={['#acbbdb','#bec6d7','#c5c8c8']} style={{borderRadius:15, height:100}}>  
+        <LinearGradient colors={['#acbbdb','#bec6d7','#c5c8c8']} style={{borderRadius:15, height:75}}>  
       <TouchableOpacity 
       onPress={()=>{setMod1(true)}}
        style={{ borderRadius:15, flex:1, justifyContent:'center' }}>
@@ -131,16 +154,36 @@ const Info = ({navigation}) => {
         //#a3a3a3
         startColor='#a3a3a3'
         finalColor='#cecece'
-        style={{borderRadius:20, borderLeftWidth:1, borderTopWidth:2, width:200,borderColor:'white',height:100}}
-        containerStyle={{marginTop:40,  borderRadius:15, backgroundColor:"#d6dcde",  marginBottom:30,width:200, alignSelf:'center'}}
+        style={{borderRadius:20, borderLeftWidth:1, borderTopWidth:2, width:200,borderColor:'white',height:75}}
+        containerStyle={{marginTop:40,  borderRadius:15, backgroundColor:"#d6dcde",  marginBottom:20,width:200, alignSelf:'center'}}
         >
        
-        <LinearGradient colors={['#acbbdb','#bec6d7','#c5c8c8']} style={{borderRadius:15, height:100,}}>  
+        <LinearGradient colors={['#acbbdb','#bec6d7','#c5c8c8']} style={{borderRadius:15, height:75,}}>  
       <TouchableOpacity 
             onPress={()=>{setMod2(true)}}
 
        style={{borderRadius:15, flex:1, justifyContent:'center'}}>
         <Text style={{textAlign:'center', color:'white', fontSize:20}}>продажа</Text>
+      </TouchableOpacity>
+      </LinearGradient>
+      </Shadow>
+      <Shadow
+        distance={40}
+        
+        //offset={(20 || 20)}
+        //#a3a3a3
+        startColor='#a3a3a3'
+        finalColor='#cecece'
+        style={{borderRadius:20, borderLeftWidth:1, borderTopWidth:2, width:200,borderColor:'white',height:75}}
+        containerStyle={{marginTop:40,  borderRadius:15, backgroundColor:"#d6dcde",  marginBottom:30,width:200, alignSelf:'center'}}
+        >
+       
+        <LinearGradient colors={['#acbbdb','#bec6d7','#c5c8c8']} style={{borderRadius:15, height:75,}}>  
+      <TouchableOpacity 
+            onPress={()=>{setMod3(true)}}
+
+       style={{borderRadius:15, flex:1, justifyContent:'center'}}>
+        <Text style={{textAlign:'center', color:'white', fontSize:20}}>бесплатные талоны</Text>
       </TouchableOpacity>
       </LinearGradient>
       </Shadow>

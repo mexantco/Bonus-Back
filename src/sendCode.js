@@ -220,7 +220,7 @@ const SendCode = ({navigation, route}) => {
       //This is title
      "Спасибо!",
        //This is body text
-     "Вам начислен 1 талон.",
+     "Вам начислен 1 талон. Если у вас еще остались бонусы, укажите их в разделе продать.",
      [
        {text: 'Понятно', onPress:  nav},
        

@@ -47,7 +47,7 @@ const uptcoupone = {
     elem3.style.display = 'none';
     var elem2 = document.getElementsByClassName('qa-quickpay-info-title');
     elem2 = elem2[0];
-    elem2.innerHTML='<span style="font-size:1.5em;">в приложении бонус банк</span>';
+    elem2.innerHTML='<span style="font-size:1.5em;">в приложении бонус-бэк</span>';
     
 }
 document.addEventListener("DOMContentLoaded", ready);
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", ready);
   
   return (
     <WebView
-        source={{ uri: 'https://yoomoney.ru/quickpay/confirm.xml?receiver=410013213230959&quickpay-form=button&paymentType=АС&sum=2&successURL=https://spacemix.ru?userId'+uid }}
+        source={{ uri: 'https://yoomoney.ru/quickpay/confirm.xml?receiver=410013213230959&quickpay-form=button&paymentType=АС&sum=200&successURL=https://spacemix.ru?userId'+uid }}
         
         injectedJavaScriptBeforeContentLoaded={runfirst}
         onNavigationStateChange={async(newNavState)=>{
