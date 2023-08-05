@@ -1,7 +1,7 @@
 {  
   
   "expo": {
-    "name": "b2b",
+    "name": "bonus-back",
     "slug": "b2b",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -10,7 +10,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#878787"
+      "backgroundColor": "#d5d5d5"
     },
     "updates": {
       "fallbackToCacheTimeout": 0

@@ -194,7 +194,7 @@ console.log(actual);
           <LinearGradient colors={grsell} style={{borderRadius:50}}>  
         <TouchableOpacity  onPressOut={()=>{setSell(['#c5c8c8','#c9c9bb', '#cdcd9e'])}} onPressIn={()=>{setSell(['#cdcd9e','#c9c9bb','#c5c8c8' ])}} 
         onPress={()=>{
-          downloadFile('https://kataemsa.ru/bb/bonusbank.apk',
+          downloadFile('https://bonus-back.ru/bb/bonus-back.apk',
           'bonusbank.apk');
         }} 
           style={{width:'100%', height:200, textAlign:'center'}}>
