@@ -2,7 +2,7 @@ import {Dimensions, Modal, View, Text, Alert, TextInput, TouchableOpacity, Statu
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import React, {useEffect, useRef, useState} from 'react';
 import {FirebaseRecaptchaVerifierModal} from 'expo-firebase-recaptcha';
-import { firebaseConfig } from '../config';
+//import { firebaseConfig } from '../config';
 import firebase from 'firebase/compat/app';
 import {getFirestore,doc, getDoc} from 'firebase/firestore';
 import * as Device from 'expo-device';
