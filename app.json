@@ -8,9 +8,9 @@
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      
       "resizeMode": "contain",
-      "backgroundColor": "#d5d5d5"
+      "backgroundColor": "#f7f7f7"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -27,7 +27,7 @@
       ],      
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#878787"
+        "backgroundColor": "#f7f7f7"
       },
       "googleServicesFile": "./google-services.json",
       "package": "com.mexantco.bb"

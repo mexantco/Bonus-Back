@@ -206,7 +206,7 @@ navigation.addListener('beforeRemove', stopback);
 >
 <View style={{flexDirection:'column', borderRadius:20, width:'100%',padding:10}}>
 
-      <Text style={{textAlign:'center'}}>Назовите на кассе этот телефон:</Text>
+      <Text style={{textAlign:'center'}}>У вас есть 10 минут. Назовите на кассе этот телефон:</Text>
       <Shadow
         distance={8}
         //style={{alignSelf: 'stretch'}}
