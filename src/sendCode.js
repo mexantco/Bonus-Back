@@ -121,6 +121,7 @@ const SendCode = ({navigation, route}) => {
      console.log("f1="+from1+' shop='+shop3);
      //alert('код: '+kod);
      //setCode(kod);
+     if(from1=='kariCLUB'){from1='kari'}
      if(from1==shop3){
      updateCode(kod);
      }
