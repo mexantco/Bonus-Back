@@ -33,29 +33,20 @@ const Otp =  ({navigation}) => {
     const [pin,setPin]=useState(0);
     const callme = ()=>{
         setDisphone(true);
-        if (phoneNumber.length<15){Alert.alert("Номер телефона не корректно указан."); return false;}
-        let pin1= Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000;
-        setPin(pin1);
+        if (phoneNumber.length<14){Alert.alert("Номер телефона не корректно указан."); return false;}
+        // let pin1= Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000;
+        // setPin(pin1);
         
         
         console.log('звоним вам');
         setCall(true);
        
           axios({
-            method:'post', 
-            url: 'https://direct.i-dgtl.ru/api/v1/message',
-            headers: {
-                'Authorization': 'Basic NTA2NjoxcmpyRTgxOWV2aWtzTjhTRVB3b0xh',
-                'Content-Type': 'application/json'
-              },
-              data: [{
-                  channelType: "FLASHCALL",
-                      senderName: "FLASHCALL",
-                      destination: phoneNumber.replace(/[()-]/g, ""),
-                      content: pin1,
-                      ttl:70
-              }]
-        }).then((response)=>{console.log(response)});
+            method:'get', 
+            url: 'https://api.telefon-ip.ru/api/v1/authcalls/5ee1010c-31e0-4049-9d0b-05cbb3dd78ab/get_code/'+phoneNumber.replace(/[()-]/g, ""),
+            
+              
+        }).then((response)=>{setPin(response.data.data.code)});
 
 
 //         fetch('https://direct.i-dgtl.ru/api/v1/message', {
@@ -264,14 +255,14 @@ const Otp =  ({navigation}) => {
             editable={!disphone}
             keyboardType='numeric'
             //inputMode='tel'
-            value="+7"
+            value="8("
             style={{backgroundColor:'white', fontSize:20, width:'100%', height:'100%', borderRadius:20, textAlign:'center'}}
             onChangeText={(text, rawText) => {
             setPhoneNumber(text);
     // +1 (123) 456-78-90
    // console.log(extracted) // 1234567890
              }}
-             mask="+7(999)999-9999"
+             mask="8(999)999-9999"
             />
             </Shadow>
             <Text style={{fontSize:12, marginBottom:20}} >
